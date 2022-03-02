@@ -1,6 +1,6 @@
 
 
-name: admin
+name: server
 
 
 on:
@@ -8,6 +8,11 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_run:
+    workflows:
+      - "admin"
+    types:
+      - completed
 
 jobs:
   build:
