@@ -22,4 +22,4 @@ jobs:
           echo test, and deploy your project.
       - name: Sleep
         run: |
-          sleep 10
+          sleep 100
