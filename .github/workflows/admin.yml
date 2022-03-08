@@ -23,4 +23,4 @@ jobs:
       - name: Sleep
         run: |
           sleep 20
-          echo "done with Admin"
+          bash fail.sh
