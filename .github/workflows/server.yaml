@@ -2,12 +2,7 @@
 
 name: server
 
-
 on:
-  # push:
-  #   branches: [ master ]
-  # pull_request:
-  #   branches: [ master ]
   workflow_run:
     workflows: ["admin"]
     types:
@@ -15,14 +10,9 @@ on:
 
 jobs:
   build_1:
-    # needs: [build]
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2      
       - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: "failed, send notification"
