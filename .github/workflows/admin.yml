@@ -26,8 +26,7 @@ jobs:
 
       - name: printing base branch
         run: |
-          echo Hello world from ${GITHUB_HEAD_REF}
-          echo Hello GITHUB_BASE_REF from ${GITHUB_BASE_REF}
+          echo Hello world from ${{github.actor}}
       
       - name: Finding size diff
         id: size_diff
