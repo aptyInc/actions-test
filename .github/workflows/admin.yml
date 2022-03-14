@@ -28,7 +28,7 @@ jobs:
         id: size_diff
         run: chmod +x ./find_diff.sh && ./find_diff.sh
         env:
-          BASE_BRANCH: "master"
+          BASE_BRANCH: "origin/master"
           CURRENT_BRANCH: "checking-1"
       
       - name: Printing diff
