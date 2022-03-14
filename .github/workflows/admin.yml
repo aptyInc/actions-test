@@ -20,6 +20,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+      
       - name: Finding size diff
         id: size_diff
         run: chmod +x ./find_diff.sh && ./find_diff.sh
