@@ -29,7 +29,7 @@ jobs:
         run: chmod +x ./find_diff.sh && ./find_diff.sh
         env:
           BASE_BRANCH: "master"
-          CURRENT_BRANCH: "diff"
+          CURRENT_BRANCH: "checking-1"
       
       - name: Printing diff
         run: echo ${{steps.size_diff.outputs.size}}
