@@ -28,4 +28,4 @@ jobs:
           CURRENT_BRANCH: "diff"
       
       - name: Printing diff
-        run: echo "{steps.size_diff.outputs.size}"
+        run: echo ${{steps.size_diff.outputs.size}}
