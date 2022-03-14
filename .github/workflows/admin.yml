@@ -32,7 +32,7 @@ jobs:
         id: size_diff
         run: chmod +x ./find_diff.sh && ./find_diff.sh
         env:
-          BASE_BRANCH: "origin/master"
+          BASE_BRANCH: "origin/${{github.base_ref}}"
           CURRENT_BRANCH: "checking-1"
           ALL: ${{ toJson(github) }}
       
