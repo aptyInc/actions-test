@@ -25,7 +25,7 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
 
       - name: printing base branch
-        run: echo "${{github.base_ref}}"
+        run: ${{github.base_ref}}
       
       - name: Finding size diff
         id: size_diff
