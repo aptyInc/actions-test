@@ -5,9 +5,9 @@ name: admin
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "*" ]
 
 jobs:
   build:
@@ -20,6 +20,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          git diff --name-only origin/main diff
       - name: Sleep
         run: |
           sleep 20
