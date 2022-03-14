@@ -5,9 +5,9 @@ name: admin
 
 on:
   push:
-    # branches: [ "*" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "*" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -21,15 +21,20 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
+
+      - name: printing base branch
+        run: |
+          echo Hello world from ${{github.base.ref}}
       
       - name: Finding size diff
         id: size_diff
         run: chmod +x ./find_diff.sh && ./find_diff.sh
         env:
-          BASE_BRANCH: "master"
-          CURRENT_BRANCH: "diff"
+          BASE_BRANCH: "origin/${{github.base_ref}}"
+          CURRENT_BRANCH: "origin/checking-1"
+          ALL: ${{ toJson(github) }}
       
       - name: Printing diff
         run: echo ${{steps.size_diff.outputs.size}}
