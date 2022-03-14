@@ -5,9 +5,9 @@ name: admin
 
 on:
   push:
-    branches: [ master ]
+    # branches: [ "*" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "*" ]
 
 jobs:
   build:
@@ -20,7 +20,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Sleep
-        run: |
-          sleep 20
-          bash fail.sh
+      - name: Finding size diff
+        id: size_diff
+        run: chmod +x ./find_diff.sh && ./find_diff.sh
+        env:
+          BASE_BRANCH: "master"
+          CURRENT_BRANCH: "diff"
+      
+      - name: Printing diff
+        run: echo ${{steps.size_diff.outputs.size}}
