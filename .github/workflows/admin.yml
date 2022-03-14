@@ -26,7 +26,7 @@ jobs:
 
       - name: printing base branch
         run: |
-          echo Hello world from ${{github.event.pull_request.base.ref}}
+          echo Hello world from ${{github}}
       
       - name: Finding size diff
         id: size_diff
