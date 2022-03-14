@@ -6,6 +6,8 @@ echo "finding the diff between $BASE_BRANCH and $CURRENT_BRANCH"
 
 COMMAND="git diff "$BASE_BRANCH" "${CURRENT_BRANCH}" -- ./ ./"
 
+echo "command is ${COMMAND}"
+
 OUTPUT=$(${COMMAND})
 
 size=${#OUTPUT} 
