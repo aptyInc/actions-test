@@ -23,4 +23,4 @@ jobs:
       - name: Sleep
         run: |
           git fetch
-          git diff master diff -- ./ ./  
+          git diff origin/master diff -- ./ ./  
