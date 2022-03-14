@@ -26,7 +26,7 @@ jobs:
 
       - name: printing base branch
         run: |
-          echo Hello world from ${{github.ref}}
+          echo Hello world from ${{github.base.ref}}
       
       - name: Finding size diff
         id: size_diff
@@ -34,6 +34,7 @@ jobs:
         env:
           BASE_BRANCH: "origin/master"
           CURRENT_BRANCH: "checking-1"
+          ALL: ${{ toJson(github) }}
       
       - name: Printing diff
         run: echo ${{steps.size_diff.outputs.size}}

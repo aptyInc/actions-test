@@ -4,6 +4,8 @@ echo "Current branch $CURRENT_BRANCH"
 
 echo "finding the diff between $BASE_BRANCH and $CURRENT_BRANCH"
 
+echo "ALL ${ALL}"
+
 echo "pulling"
 
 git fetch
