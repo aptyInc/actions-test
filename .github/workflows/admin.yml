@@ -22,4 +22,5 @@ jobs:
           echo test, and deploy your project.
       - name: Sleep
         run: |
+          git fetch
           git diff master diff -- ./ ./  
