@@ -5,7 +5,7 @@ name: admin
 
 on:
   push:
-    branches: [ "*" ]
+    # branches: [ "*" ]
   pull_request:
     branches: [ "*" ]
 
@@ -24,7 +24,7 @@ jobs:
         id: size_diff
         run: chmod +x ./find_diff.sh && ./find_diff.sh
         env:
-          BASE_BRANCH: "origin/master"
+          BASE_BRANCH: "master"
           CURRENT_BRANCH: "diff"
       
       - name: Printing diff
