@@ -23,6 +23,9 @@ jobs:
 
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
+
+      - name: printing base branch
+        run: echo "printing brase branch ${{github.event.pull_request.base.ref}}"
       
       - name: Finding size diff
         id: size_diff
