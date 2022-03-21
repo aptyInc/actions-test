@@ -1,8 +1,8 @@
-name: assist
+name: accounts
 
 
 on:
-  repository_dispatch
+  repository_dispatch:
     types: [publish_accounts]
 jobs:
   build:

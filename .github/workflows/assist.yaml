@@ -2,7 +2,7 @@ name: assist
 
 
 on:
-  repository_dispatch
+  repository_dispatch:
     types: [publish_assist]
 jobs:
   build:
