@@ -34,7 +34,7 @@ jobs:
         env:
           BASE_BRANCH: "origin/${{github.base_ref}}"
           CURRENT_BRANCH: "origin/checking-1"
-          ALL: ${{ toJson(github) }}
+          ALL: "🔔"
       
       - name: Printing diff
         run: echo ${{steps.size_diff.outputs.size}}
