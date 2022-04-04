@@ -23,6 +23,10 @@ jobs:
           token: ${{ secrets.ACTIONS_TOKEN }} # stored in GitHub secrets
           path: .github/actions/apty-branch-manager-action
       - name: Run My Action
+        id: my_action
         uses: ./.github/actions/apty-branch-manager-action
         env:
           NAME: 'Sai Umesh'
+
+      - name: Printing output
+        run: echo "Hello, ${{steps.my_action.outputs.result}}"
