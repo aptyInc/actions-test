@@ -13,7 +13,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2      
-      
-      - uses: aptyInc/apty-branch-manager-action@main
-        name: checking private action
+      - uses: actions/checkout@v2
+
+      - name: Checkout private action
+        uses: actions/checkout@v2
+        with:
+          repository: aptyInc/apty-branch-manager-action
+          ref: main
+          token: ${{ secrets.ACTIONS_TOKEN }} # stored in GitHub secrets
+          path: .github/actions/my-action
+      - name: Run My Action
+        uses: ./.github/actions/apty-branch-manager-action
