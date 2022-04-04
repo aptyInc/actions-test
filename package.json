@@ -1,0 +1,23 @@
+{
+  "name": "actions-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://saiumesh-apty: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@github.com/saiumesh-apty/actions-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saiumesh-apty/actions-test/issues"
+  },
+  "homepage": "https://github.com/saiumesh-apty/actions-test#readme",
+  "dependencies": {
+    "axios": "0.26.1"
+  }
+}
