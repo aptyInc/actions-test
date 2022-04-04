@@ -24,3 +24,5 @@ jobs:
           path: .github/actions/apty-branch-manager-action
       - name: Run My Action
         uses: ./.github/actions/apty-branch-manager-action
+        env:
+          name: 'Sai Umesh'
